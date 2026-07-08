@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creative Saako - Apply</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="./home.html">Creative <span>Saako</span></a>
+      <div class="tabs">
+        <a class="tab" href="./home.html">Home</a>
+        <a class="tab" href="./program.html">Program</a>
+        <a class="tab" href="./tracks.html">Tracks</a>
+        <a class="tab" href="./support.html">Support</a>
+        <a class="tab active" href="./apply.html">Apply</a>
+        <a class="tab" href="./founder.html">Founder</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section cream cohort apply-cohort">
+      <div class="wrap cohort">
+        <div>
+          <div class="kicker no-line">Cohort 2 is open</div>
+          <h2>July 6 - September 6,<br><span class="accent">2026.</span></h2>
+          <p style="margin-top:22px;font-size:12px;max-width:460px"><span class="tag">Register before 30 June.</span></p>
+        </div>
+
+        <div class="negotiation" id="priceNegotiation">
+          <div class="negotiation-header">
+            <div>
+              <div class="kicker no-line" style="margin:0 0 8px">Tuition <span style="float:right">RWF</span></div>
+              <div class="negotiation-price" id="displayPrice">50,000</div>
+            </div>
+            <div class="status-chip pending" id="priceStatus">Pending approval</div>
+          </div>
+
+          <div class="stack">
+            <div class="stack">
+              <span class="kicker no-line" style="margin:0">View as</span>
+              <div class="negotiation-actions">
+                <button class="btn outline small" id="clientViewBtn" type="button">Client</button>
+                <button class="btn outline small" id="staffViewBtn" type="button">Staff</button>
+              </div>
+            </div>
+
+            <div class="grid2">
+              <label class="stack">
+                <span class="kicker no-line" style="margin:0">Email</span>
+                <input id="emailInput" class="field" type="email" value="client@saako.com" />
+              </label>
+              <label class="stack">
+                <span class="kicker no-line" style="margin:0">Proposed price</span>
+                <input id="priceInput" class="field" type="number" min="0" step="500" value="50000" />
+              </label>
+            </div>
+
+            <label class="stack">
+              <span class="kicker no-line" style="margin:0">Staff notes</span>
+              <textarea id="notesInput" class="field" rows="3" placeholder="Add approval notes, revision notes, or a reason for the counter offer.">Initial price shared with the client.</textarea>
+            </label>
+
+            <div class="negotiation-actions">
+              <button class="btn primary small" id="approveBtn" type="button">Approve</button>
+              <button class="btn outline small" id="declineBtn" type="button">Decline</button>
+              <button class="btn dark small" id="counterBtn" type="button">Update price</button>
+            </div>
+
+            <ul>
+              <li>8 weeks of structured learning</li>
+              <li>1:1 coaching + group sessions</li>
+              <li>Community + alumni access</li>
+              <li>Physical meetup in Kigali</li>
+            </ul>
+
+            <div class="negotiation-log" id="negotiationLog">
+              Current status: waiting for a client or staff response.
+            </div>
+
+            <table class="thread-table" aria-label="Negotiation thread">
+              <thead>
+                <tr>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Price</th>
+                  <th>Status</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody id="threadBody">
+                <tr>
+                  <td id="threadEmail">client@saako.com</td>
+                  <td id="threadRole">Client</td>
+                  <td id="threadPrice">RWF 50,000</td>
+                  <td id="threadStatus">Pending approval</td>
+                  <td id="threadNotes">Initial price shared with the client.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cream cta">
+      <div class="wrap">
+        <h2>Creative Saako is for people ready to build independent careers with the right digital skills, community and support to make it happen.</h2>
+        <p style="margin-top:24px">Apply for the program and join a cohort built around real learning, real support, and real outcomes.</p>
+        <div class="btns">
+          <a class="btn primary" href="#">Apply for the program</a>
+          <a class="btn outline" href="./support.html">Join community waitlist</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section footer">
+      <div class="wrap footer-grid">
+        <div>
+          <div class="brand">Creative <span>Saako</span></div>
+          <p style="margin-top:18px">A home for the next generation of African digital entrepreneurs. Skills, community, and the support to live life on your own terms.</p>
+          <small>Made with care in Kigali &middot; Rwanda</small>
+        </div>
+        <div>
+          <div class="kicker no-line" style="color:rgba(255,255,255,.72)"><b>Explore</b></div>
+          <div class="footer-links">
+            <a href="./founder.html">Why</a>
+            <a href="./program.html">Program</a>
+            <a href="./support.html">Community</a>
+            <a href="./tracks.html">Experiences</a>
+          </div>
+        </div>
+        <div>
+          <div class="kicker no-line" style="color:rgba(255,255,255,.72)"><b>Start</b></div>
+          <div class="footer-links">
+            <a href="./apply.html">Apply to Cohort 2</a>
+            <a href="mailto:hello@creativesaako.com">hello@creativesaako.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const priceInput = document.getElementById('priceInput');
+    const displayPrice = document.getElementById('displayPrice');
+    const priceStatus = document.getElementById('priceStatus');
+    const negotiationLog = document.getElementById('negotiationLog');
+    const emailInput = document.getElementById('emailInput');
+    const clientViewBtn = document.getElementById('clientViewBtn');
+    const staffViewBtn = document.getElementById('staffViewBtn');
+    const approveBtn = document.getElementById('approveBtn');
+    const declineBtn = document.getElementById('declineBtn');
+    const counterBtn = document.getElementById('counterBtn');
+    const notesInput = document.getElementById('notesInput');
+    const threadEmail = document.getElementById('threadEmail');
+    const threadRole = document.getElementById('threadRole');
+    const threadPrice = document.getElementById('threadPrice');
+    const threadStatus = document.getElementById('threadStatus');
+    const threadNotes = document.getElementById('threadNotes');
+    let activeRole = 'client';
+
+    function formatPrice(value) {
+      const parsed = Number(value || 0);
+      return parsed.toLocaleString('en-US');
+    }
+
+    function setStatus(kind, text) {
+      priceStatus.className = 'status-chip ' + kind;
+      priceStatus.textContent = text;
+      threadStatus.textContent = text;
+    }
+
+    function setRole(role) {
+      activeRole = role;
+      clientViewBtn.className = role === 'client' ? 'btn primary small' : 'btn outline small';
+      staffViewBtn.className = role === 'staff' ? 'btn primary small' : 'btn outline small';
+      threadRole.textContent = role === 'client' ? 'Client' : 'Staff';
+      negotiationLog.textContent = role === 'client'
+        ? 'Client view active: propose a price, send it, then wait for staff to approve or decline.'
+        : 'Staff view active: review the client price, update it, and leave notes before sending it back.';
+      if (role === 'client') {
+        approveBtn.textContent = 'Approve';
+        declineBtn.textContent = 'Decline';
+        counterBtn.textContent = 'Send to staff';
+      } else {
+        approveBtn.textContent = 'Approve';
+        declineBtn.textContent = 'Decline';
+        counterBtn.textContent = 'Update price';
+      }
+    }
+
+    function updateDisplay() {
+      const priceText = formatPrice(priceInput.value);
+      displayPrice.textContent = priceText;
+      threadPrice.textContent = 'RWF ' + priceText;
+      threadEmail.textContent = emailInput.value || 'client@saako.com';
+      threadNotes.textContent = notesInput.value || 'No notes added yet.';
+    }
+
+    priceInput.addEventListener('input', updateDisplay);
+    emailInput.addEventListener('input', updateDisplay);
+    notesInput.addEventListener('input', updateDisplay);
+    clientViewBtn.addEventListener('click', () => setRole('client'));
+    staffViewBtn.addEventListener('click', () => setRole('staff'));
+
+    approveBtn.addEventListener('click', () => {
+      updateDisplay();
+      setStatus('approved', 'Approved');
+      negotiationLog.textContent = activeRole === 'client'
+        ? 'Client approved the updated staff price at RWF ' + formatPrice(priceInput.value) + '.'
+        : 'Staff approved the client price at RWF ' + formatPrice(priceInput.value) + '.';
+      notesInput.value = activeRole === 'client'
+        ? 'Client approved the updated price and accepted the staff notes.'
+        : 'Staff approved the client price.';
+      updateDisplay();
+    });
+
+    declineBtn.addEventListener('click', () => {
+      setStatus('declined', 'Declined');
+      negotiationLog.textContent = activeRole === 'client'
+        ? 'Client declined the current price. Change the amount and send a new offer.'
+        : 'Staff declined the current price. Revise it, add notes, and send it back.';
+      notesInput.value = activeRole === 'client'
+        ? 'Client declined the updated price and is waiting for a revision.'
+        : 'Staff declined the price and requested a revision.';
+      updateDisplay();
+    });
+
+    counterBtn.addEventListener('click', () => {
+      updateDisplay();
+      setStatus('pending', 'Counter sent');
+      negotiationLog.textContent = activeRole === 'client'
+        ? 'Client sent RWF ' + formatPrice(priceInput.value) + ' to staff. Staff can approve or decline.'
+        : 'Staff updated the price to RWF ' + formatPrice(priceInput.value) + ' and sent it back with notes.';
+      notesInput.value = activeRole === 'client'
+        ? 'Client sent a new price for staff review.'
+        : 'Staff updated the price and added notes for client approval.';
+      updateDisplay();
+    });
+
+    setRole('client');
+  </script>
+</body>
+</html>
