@@ -1,0 +1,10 @@
+html,
+body {
+    background-color: #16130c !important;
+    color: #e9e2d5;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    overflow-x: hidden !important;
+}

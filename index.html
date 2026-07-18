@@ -1,0 +1,1592 @@
+﻿<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Creative Saako | One Page Website</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-bright": "#3c3930",
+            "on-primary-fixed": "#221b00",
+            "surface-container-lowest": "#100e07",
+            "on-error": "#690005",
+            "error": "#ffb4ab",
+            "surface-tint": "#e1c552",
+            "primary-fixed-dim": "#e1c552",
+            "primary": "#ffffff",
+            "inverse-on-surface": "#333028",
+            "on-tertiary-fixed": "#002022",
+            "on-primary": "#3a3000",
+            "on-primary-container": "#766300",
+            "on-background": "#e9e2d5",
+            "background": "#16130c",
+            "tertiary-fixed-dim": "#5ad8e3",
+            "surface-container": "#221f17",
+            "on-tertiary-container": "#006f77",
+            "surface-container-highest": "#38352c",
+            "on-secondary-fixed": "#1f1c0d",
+            "on-tertiary-fixed-variant": "#004f54",
+            "tertiary-fixed": "#7cf4ff",
+            "on-surface-variant": "#cec6b0",
+            "secondary-fixed-dim": "#cec6af",
+            "outline-variant": "#4c4736",
+            "on-secondary-fixed-variant": "#4b4735",
+            "surface-container-low": "#1e1b14",
+            "secondary": "#cec6af",
+            "secondary-fixed": "#ebe2ca",
+            "secondary-container": "#4b4735",
+            "outline": "#97907c",
+            "tertiary": "#feffff",
+            "on-surface": "#e9e2d5",
+            "inverse-surface": "#e9e2d5",
+            "on-secondary-container": "#bcb59e",
+            "surface-dim": "#16130c",
+            "surface": "#16130c",
+            "on-tertiary": "#00363a",
+            "on-secondary": "#353020",
+            "primary-container": "#ffe16b",
+            "surface-container-high": "#2d2a21",
+            "on-primary-fixed-variant": "#544600",
+            "inverse-primary": "#705d00",
+            "tertiary-container": "#7bf4ff",
+            "error-container": "#93000a",
+            "primary-fixed": "#ffe16c",
+            "surface-variant": "#38352c",
+            "on-error-container": "#ffdad6"
+          },
+          borderRadius: {
+            DEFAULT: "1rem",
+            lg: "2rem",
+            xl: "3rem",
+            full: "9999px"
+          },
+          spacing: {
+            "margin-desktop": "2.5rem",
+            "stack-lg": "4rem",
+            "margin-mobile": "1.25rem",
+            "container-max": "1280px",
+            "stack-sm": "0.5rem",
+            "gutter": "1.5rem",
+            "stack-md": "1.5rem"
+          },
+          fontFamily: {
+            "body-lg": ["Hanken Grotesk"],
+            "display-lg": ["Hanken Grotesk"],
+            "headline-lg": ["Hanken Grotesk"],
+            "label-md": ["Hanken Grotesk"],
+            "headline-md": ["Hanken Grotesk"],
+            "display-lg-mobile": ["Hanken Grotesk"],
+            "body-md": ["Hanken Grotesk"]
+          },
+          fontSize: {
+            "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+            "display-lg": ["72px", { lineHeight: "1.1", letterSpacing: "-0.04em", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "label-md": ["14px", { lineHeight: "1.4", letterSpacing: "0.02em", fontWeight: "500" }],
+            "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+            "display-lg-mobile": ["40px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    :root {
+      --background: #16130c;
+      --surface: #1e1b14;
+      --surface-high: #2d2a21;
+      --foreground: #ffffff;
+      --body-text: #cec6b0;
+      --gold: #ffe16b;
+      --border: #4c4736;
+      --dark-text: #221b00;
+      --max-width: 1280px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: var(--background);
+      color: var(--foreground);
+      font-family: "Hanken Grotesk", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Navbar is loaded from site-shell.css and site-shell.js */
+
+    /* SHARED LAYOUT */
+
+    .section {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 64px 40px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      padding: 6px 14px;
+      border: 1px solid rgba(255, 225, 107, 0.25);
+      border-radius: 999px;
+      color: var(--gold);
+      background: rgba(255, 225, 107, 0.06);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* TEXT SIZING â€” based on the second supplied document */
+
+    .display-title {
+      font-size: 72px;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      font-weight: 700;
+    }
+
+    .section-title {
+      font-size: 32px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+    }
+
+    .card-title {
+      font-size: 24px;
+      line-height: 1.3;
+      font-weight: 600;
+    }
+
+    .body-large {
+      font-size: 18px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .body-text {
+      font-size: 16px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .label-text {
+      font-size: 14px;
+      line-height: 1.4;
+      letter-spacing: 0.02em;
+      font-weight: 500;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: calc(100vh - 68px);
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      padding-bottom: 92px;
+    }
+
+    .hero-content {
+      max-width: 950px;
+    }
+
+    .hero-title {
+      max-width: 920px;
+      margin-bottom: 24px;
+    }
+
+    .highlight {
+      color: var(--gold);
+    }
+
+    .hero-description {
+      max-width: 680px;
+      margin-bottom: 40px;
+      color: var(--body-text);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .button {
+      min-height: 56px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 34px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 17px;
+      font-weight: 600;
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: var(--dark-text);
+      background: var(--gold);
+    }
+
+    .button-primary:hover {
+      background: #ffe985;
+    }
+
+    .button-secondary {
+      color: var(--foreground);
+      border-color: var(--border);
+      background: transparent;
+    }
+
+    .button-secondary:hover {
+      background: var(--surface);
+    }
+
+    /* WHAT WE BUILD */
+
+    .section-heading-row {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 64px;
+    }
+
+    .section-heading-copy {
+      max-width: 640px;
+    }
+
+    .section-heading-copy p {
+      margin-top: 16px;
+      color: var(--body-text);
+    }
+
+    .heading-line {
+      height: 1px;
+      flex: 1;
+      margin-bottom: 11px;
+      background: rgba(76, 71, 54, 0.65);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      padding: 40px;
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      background: var(--surface);
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 225, 107, 0.45);
+    }
+
+    .card-large {
+      grid-column: span 8;
+    }
+
+    .card-small {
+      grid-column: span 4;
+    }
+
+    .card-wide {
+      grid-column: span 12;
+      background: var(--surface-high);
+    }
+
+    .cards-grid > .card {
+      grid-column: span 4;
+      min-width: 0;
+    }
+
+    .card-number {
+      margin-bottom: 26px;
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      max-width: 600px;
+      color: var(--body-text);
+    }
+
+    /* CTA */
+
+    .cta-box {
+      padding: 80px 40px;
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      background: var(--surface-high);
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    .cta-box p {
+      max-width: 600px;
+      margin: 0 auto 36px;
+      color: var(--body-text);
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+      margin-top: 64px;
+      border-top: none;
+      background: #16130c;
+    }
+
+    .footer-inner {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 64px 40px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-brand {
+      margin-bottom: 16px;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .footer-description {
+      max-width: 390px;
+      color: var(--body-text);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-column h3 {
+      margin-bottom: 16px;
+      color: var(--foreground);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-column a {
+      margin-bottom: 8px;
+      color: var(--body-text);
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-column a:hover {
+      color: var(--foreground);
+    }
+
+    .footer-bottom {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 22px 40px;
+      border-top: none;
+      color: var(--body-text);
+      font-size: 13px;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .section {
+        padding: 56px 20px;
+      }
+
+      .display-title {
+        font-size: 40px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 82px;
+        padding-bottom: 72px;
+      }
+
+      .section-heading-row {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 40px;
+      }
+
+      .heading-line {
+        display: none;
+      }
+
+      .card-large,
+      .card-small,
+      .card-wide {
+        grid-column: span 12;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        padding: 52px 20px;
+      }
+
+      .footer-bottom {
+        padding-inline: 20px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .section-title {
+        font-size: 29px;
+      }
+
+      .card {
+        padding: 28px;
+        border-radius: 24px;
+      }
+
+      .cta-box {
+        padding: 56px 24px;
+        border-radius: 24px;
+      }
+    }
+  </style>
+<style>
+    :root {
+      --background: #16130c;
+      --surface: #1e1b14;
+      --surface-high: #2d2a21;
+      --foreground: #ffffff;
+      --body-text: #cec6b0;
+      --gold: #ffe16b;
+      --border: #4c4736;
+      --dark-text: #221b00;
+      --max-width: 1280px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: var(--background);
+      color: var(--foreground);
+      font-family: "Hanken Grotesk", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Navbar is loaded from site-shell.css and site-shell.js */
+
+    /* SHARED LAYOUT */
+
+    .section {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 64px 40px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      padding: 6px 14px;
+      border: 1px solid rgba(255, 225, 107, 0.25);
+      border-radius: 999px;
+      color: var(--gold);
+      background: rgba(255, 225, 107, 0.06);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* TEXT SIZING â€” based on the second supplied document */
+
+    .display-title {
+      font-size: 72px;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      font-weight: 700;
+    }
+
+    .section-title {
+      font-size: 32px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+    }
+
+    .card-title {
+      font-size: 24px;
+      line-height: 1.3;
+      font-weight: 600;
+    }
+
+    .body-large {
+      font-size: 18px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .body-text {
+      font-size: 16px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .label-text {
+      font-size: 14px;
+      line-height: 1.4;
+      letter-spacing: 0.02em;
+      font-weight: 500;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: calc(100vh - 68px);
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      padding-bottom: 92px;
+    }
+
+    .hero-content {
+      max-width: 950px;
+    }
+
+    .hero-title {
+      max-width: 920px;
+      margin-bottom: 24px;
+    }
+
+    .highlight {
+      color: var(--gold);
+    }
+
+    .hero-description {
+      max-width: 680px;
+      margin-bottom: 40px;
+      color: var(--body-text);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .button {
+      min-height: 56px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 34px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 17px;
+      font-weight: 600;
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: var(--dark-text);
+      background: var(--gold);
+    }
+
+    .button-primary:hover {
+      background: #ffe985;
+    }
+
+    .button-secondary {
+      color: var(--foreground);
+      border-color: var(--border);
+      background: transparent;
+    }
+
+    .button-secondary:hover {
+      background: var(--surface);
+    }
+
+    /* WHAT WE BUILD */
+
+    .section-heading-row {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 64px;
+    }
+
+    .section-heading-copy {
+      max-width: 640px;
+    }
+
+    .section-heading-copy p {
+      margin-top: 16px;
+      color: var(--body-text);
+    }
+
+    .heading-line {
+      height: 1px;
+      flex: 1;
+      margin-bottom: 11px;
+      background: rgba(76, 71, 54, 0.65);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      padding: 40px;
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      background: var(--surface);
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 225, 107, 0.45);
+    }
+
+    .card-large {
+      grid-column: span 8;
+    }
+
+    .card-small {
+      grid-column: span 4;
+    }
+
+    .card-wide {
+      grid-column: span 12;
+      background: var(--surface-high);
+    }
+
+    .cards-grid > .card {
+      grid-column: span 4;
+      min-width: 0;
+    }
+
+    .card-number {
+      margin-bottom: 26px;
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      max-width: 600px;
+      color: var(--body-text);
+    }
+
+    /* CTA */
+
+    .cta-box {
+      padding: 80px 40px;
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      background: var(--surface-high);
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    .cta-box p {
+      max-width: 600px;
+      margin: 0 auto 36px;
+      color: var(--body-text);
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+      margin-top: 64px;
+      border-top: none;
+      background: #16130c;
+    }
+
+    .footer-inner {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 64px 40px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-brand {
+      margin-bottom: 16px;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .footer-description {
+      max-width: 390px;
+      color: var(--body-text);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-column h3 {
+      margin-bottom: 16px;
+      color: var(--foreground);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-column a {
+      margin-bottom: 8px;
+      color: var(--body-text);
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-column a:hover {
+      color: var(--foreground);
+    }
+
+    .footer-bottom {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 22px 40px;
+      border-top: none;
+      color: var(--body-text);
+      font-size: 13px;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .section {
+        padding: 56px 20px;
+      }
+
+      .display-title {
+        font-size: 40px;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 82px;
+        padding-bottom: 72px;
+      }
+
+      .section-heading-row {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 40px;
+      }
+
+      .heading-line {
+        display: none;
+      }
+
+      .card-large,
+      .card-small,
+      .card-wide {
+        grid-column: span 12;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        padding: 52px 20px;
+      }
+
+      .footer-bottom {
+        padding-inline: 20px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .section-title {
+        font-size: 29px;
+      }
+
+      .card {
+        padding: 28px;
+        border-radius: 24px;
+      }
+
+      .cta-box {
+        padding: 56px 24px;
+        border-radius: 24px;
+      }
+    }
+  </style><style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(44, 44, 44, 0.5);
+        }
+        .text-primary {
+            color: #ffffff;
+        }
+        body {
+            background-color: #16130c;
+            color: #e9e2d5;
+            overflow-x: hidden;
+        }
+    </style><style>
+        body {
+            background-color: #16130c;
+            color: #e9e2d5;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(34, 31, 23, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(151, 144, 124, 0.1);
+        }
+        .gold-glow:hover {
+            box-shadow: 0 0 20px rgba(255, 225, 107, 0.15);
+        }
+    </style><style>
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+            background-color: #16130c; /* surface color from theme */
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(22, 19, 12, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid #4c4736;
+        }
+        .step-line::after {
+            content: '';
+            position: absolute;
+            left: 1.25rem;
+            top: 2rem;
+            bottom: 0;
+            width: 1px;
+            background: #4c4736;
+            transform: translateX(-50%);
+        }
+    </style><style>
+        body {
+            background-color: #16130c;
+            color: #e9e2d5;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(34, 31, 23, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(76, 71, 54, 0.3);
+        }
+
+        .creative-saako-video {
+            width: 100%;
+            margin-top: 3rem;
+            overflow: hidden;
+            border: 0;
+            border-radius: 1.5rem;
+            background: #000;
+            box-shadow: none;
+        }
+
+        .creative-saako-video iframe {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            height: auto;
+            border: 0;
+            outline: 0;
+            background: #000;
+        }
+
+        @media (max-width: 640px) {
+            .creative-saako-video {
+                margin-top: 2rem;
+                border-radius: 1rem;
+            }
+        }
+    </style><style>
+html{scroll-behavior:smooth}body{overflow-x:hidden}.one-page-section{width:100%;scroll-margin-top:88px}.one-page-section>main{padding-top:0!important}.one-page-nav{position:fixed;top:0;left:0;width:100%;z-index:1000}.one-page-nav a{text-decoration:none}.one-page-mobile-menu{display:none}@media(max-width:767px){.one-page-desktop-links{display:none!important}.one-page-mobile-toggle{display:inline-flex!important}.one-page-mobile-menu.is-open{display:flex}}
+</style></head><body class=""><nav class="one-page-nav fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md dark:bg-surface/80 border-b border-outline-variant/30 px-margin-mobile md:px-margin-desktop py-4"><div class="max-w-container-max mx-auto flex justify-between items-center"><a class="text-headline-md font-headline-md font-bold text-primary dark:text-primary" href="#home">Creative Saako</a><div class="one-page-desktop-links hidden md:flex items-center gap-8"><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#home">Home</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#program">Program</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#tracks">Apply</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#community">Community</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a></div><div class="flex items-center gap-3"><a class="bg-primary-container text-black font-label-md text-label-md px-6 py-2.5 rounded-full font-bold active:scale-95 transition-transform" href="#community" style="color:#000 !important;">Apply Now</a><button aria-expanded="false" aria-label="Open navigation" class="one-page-mobile-toggle hidden items-center justify-center text-primary text-3xl" id="one-page-menu-toggle" type="button">â˜°</button></div></div><div class="one-page-mobile-menu md:hidden flex-col gap-4 px-margin-mobile pt-4 pb-2 bg-surface/95" id="one-page-mobile-menu"><a class="font-label-md text-label-md text-on-surface-variant" href="#home">Home</a><a class="font-label-md text-label-md text-on-surface-variant" href="#program">Program</a><a class="font-label-md text-label-md text-on-surface-variant" href="#tracks">Apply</a><a class="font-label-md text-label-md text-on-surface-variant" href="#community">Community</a><a class="font-label-md text-label-md text-on-surface-variant" href="#about">About</a></div></nav><section class="one-page-section" id="home"><main style="padding-top: 6rem">
+<section class="section hero">
+<div class="hero-content">
+<h1 class="display-title hero-title">
+          Build your digital career through
+          <span class="highlight">future-proof</span>
+          skills.
+        </h1>
+<p class="body-large hero-description">
+          Learn practical digital skills alongside ambitious young Africans
+          who are building independent careers and creating opportunities
+          for themselves.
+        </p>
+<div class="hero-actions">
+<a class="button button-primary" href="#community">
+            Apply to Cohort 2
+          </a>
+<a class="button button-secondary" href="#program">
+            Explore the Program
+          </a>
+</div>
+</div>
+</section>
+<section class="section" id="what-we-build">
+<div class="section-heading-row">
+<div class="section-heading-copy">
+<h2 class="section-title">What we are building</h2>
+<p class="body-text">
+            Digital skills. Community. Lifetime memories.
+          </p>
+<p class="body-text">
+            We are not just here to teach you a skill. We are here to make
+            sure that as you grow your career, you also build lifetime
+            relationships and memories with people on the same path.
+          </p>
+</div>
+</div>
+<div class="cards-grid">
+<article class="card">
+<div class="card-number">Education</div>
+<h3 class="card-title">Real skills, real support</h3>
+<p class="body-text">
+            Taught by people actively doing the work, with support that helps
+            you keep moving forward.
+          </p>
+</article>
+<article class="card">
+<div class="card-number">Community</div>
+<h3 class="card-title">Belonging and accountability</h3>
+<p class="body-text">
+            Real relationships that make the journey less lonely and keep you
+            grounded as you grow.
+          </p>
+</article>
+<article class="card">
+<div class="card-number"> Experiences</div>
+<h3 class="card-title">Lifetime memories beyond the screen</h3>
+<p class="body-text">
+            Shared experiences with peers on the same path that stay with you
+            long after the program ends.
+          </p>
+</article>
+</div>
+</section>
+<section class="section">
+<div class="cta-box">
+<h2 class="section-title">Your digital career can start today.</h2>
+<p class="body-large">
+          Choose your track, develop your skills, build your portfolio, and
+          learn how to find and work with clients.
+        </p>
+<a class="button button-primary" href="#community">
+          Apply to Cohort 2
+        </a>
+</div>
+</section>
+</main></section><section class="one-page-section" id="program"><main>
+<!-- Hero Section -->
+<section class="relative px-margin-mobile md:px-margin-desktop py-stack-lg overflow-hidden">
+<div class="max-w-container-max mx-auto text-center relative z-10">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-stack-md text-primary">
+                    IGA Freelancing Program.
+                </h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant max-w-2xl mx-auto">
+                    Two months. One skill. One income stream.
+                </p>
+</div>
+</section>
+<!-- The Journey (Bento Grid Style) -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-lg">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Month One -->
+<div class="lg:col-span-6 group">
+<div class="h-full glass-card rounded-lg p-stack-lg relative overflow-hidden transition-all duration-500 hover:border-primary-container/50">
+<div class="absolute top-0 right-0 p-8">
+<span class="text-display-lg opacity-10 font-bold leading-none">01</span>
+</div>
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg mb-4">Month 01 - Build your skill</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg mb-6 max-w-xl">
+                                    Pick your track. Go deep.
+                                </p>
+<ul class="space-y-2 text-primary font-bold text-label-md uppercase tracking-widest mb-6">
+<li>10 modules</li>
+<li>Self-paced</li>
+<li>Live session every week</li>
+</ul>
+<div class="space-y-6">
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Track A: Social Media Management</h3>
+<p class="text-on-surface-variant font-body-md">
+                                        Strategy, content planning, copywriting, community management, analytics, and the tools you will actually use: Canva and Meta Business Suite.
+                                    </p>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Track B: UGC &amp; Content Creation</h3>
+<p class="text-on-surface-variant font-body-md">
+                                        Storytelling, filming on your phone, editing in CapCut, creating for different platforms, UGC formats, and the AI tools that speed up your workflow.
+                                    </p>
+</div>
+<p class="text-on-surface-variant font-body-md font-medium">More tracks coming soon </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Month Two -->
+<div class="lg:col-span-6 group">
+<div class="h-full glass-card rounded-lg p-stack-lg relative overflow-hidden transition-all duration-500 hover:border-primary-container/50">
+<div class="absolute top-0 right-0 p-8">
+<span class="text-display-lg opacity-10 font-bold leading-none">02</span>
+</div>
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg mb-4">Month 02 - Learn freelancing</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg mb-6">
+Everyone comes together to learn how to turn that skill into money.
+</p>
+<ul class="space-y-2 text-primary font-bold text-label-md uppercase tracking-widest">
+<li>10 modules</li>
+<li>Self-paced</li>
+<li>Live session every week</li>
+</ul>
+<p class="text-on-surface-variant font-body-md mt-6 max-w-xl">
+The part most programs skip. How to actually go from skill to income.
+</p>
+<div class="mt-6">
+<h3 class="font-headline-md text-headline-md mb-3"></h3>
+<ol class="space-y-2 list-decimal pl-5 text-on-surface-variant font-body-md">
+<li>Why having a skill alone is not enough</li>
+<li>How to build and price your offer</li>
+<li>How to find your first client</li>
+<li>How to look like a pro online</li>
+<li>Personal branding that attracts clients</li>
+<li>How to deliver work and keep clients coming back</li>
+</ol>
+</div>
+<p class="text-on-surface-variant font-body-md mt-6 max-w-xl">
+</p>
+</div>
+</div>
+</div>
+</div></div></section>
+<!-- Program Summary Section -->
+<section class="bg-[#16130c] px-margin-mobile md:px-margin-desktop py-stack-lg">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-stack-lg">
+<h2 class="font-headline-lg text-headline-lg mb-4">Program Summary</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter justify-items-center max-w-5xl mx-auto">
+<div class="p-8 border border-outline-variant rounded-lg hover:bg-surface-container transition-colors group">
+<span class="material-symbols-outlined text-primary-container text-3xl mb-4 group-hover:scale-110 transition-transform">calendar_today</span>
+<h3 class="font-headline-md text-headline-md mb-2">8 Weeks</h3>
+<p class="text-on-surface-variant text-sm">Intensive, part-time schedule designed for working professionals and students.</p>
+</div>
+<div class="p-8 border border-outline-variant rounded-lg hover:bg-surface-container transition-colors group">
+<span class="material-symbols-outlined text-primary-container text-3xl mb-4 group-hover:scale-110 transition-transform">workspace_premium</span>
+<h3 class="font-headline-md text-headline-md mb-2">Certified</h3>
+<p class="text-on-surface-variant text-sm">Earn a Saako Creative Professional certification and build your portfolio.</p>
+</div>
+<div class="p-8 border border-outline-variant rounded-lg hover:bg-surface-container transition-colors group">
+<span class="material-symbols-outlined text-primary-container text-3xl mb-4 group-hover:scale-110 transition-transform">schedule</span>
+<h3 class="font-headline-md text-headline-md mb-2">Weekly live sessions</h3>
+<p class="text-on-surface-variant text-sm">Join live sessions each week with community, peers, and people who can help you build relationships that move your work forward.</p>
+</div>
+</div>
+</div>
+</section>
+</main></section><section class="one-page-section" id="tracks"><main>
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-stack-lg relative">
+<div class="relative z-10 text-center md:text-left max-w-3xl">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-stack-md text-primary">
+                    Choose the skill you want to build.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md">
+                    Two specialized tracks designed for the modern African creator economy. Intensive, project-based, and industry-aligned.
+                </p>
+</div>
+</section>
+<!-- Main Tracks Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-stack-lg">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- Track 1: SMM -->
+<div class="glass-card rounded-lg p-8 flex flex-col justify-between group gold-glow transition-all duration-500">
+<div>
+<div class="mb-6 rounded-2xl overflow-hidden border border-outline-variant/50">
+<img alt="A collaborative strategy session with creators around a laptop in a modern workspace." class="w-full h-auto object-contain" src="images/social.png"/>
+</div>
+<h2 class="font-headline-lg text-headline-lg mb-4">Social Media Management</h2>
+<p class="text-on-surface-variant font-body-md mb-8">Master the art of managing brand presence, community growth, and digital strategy for global businesses.</p>
+<div class="flex items-end justify-between gap-4 mb-8">
+<div>
+<p class="text-label-md uppercase tracking-widest text-primary-container mb-1">Price</p>
+<p class="text-headline-lg text-primary font-bold">50,000 RWF</p>
+</div>
+<button class="px-6 py-3 rounded-full bg-primary-container text-on-primary-container font-headline-md font-bold active:scale-95 transition-all" data-payment-trigger="social-media" type="button">
+Apply Now
+</button>
+</div>
+</div>
+</div>
+<!-- Track 2: UGC --><div class="glass-card rounded-lg p-8 flex flex-col justify-between group gold-glow transition-all duration-500">
+<div>
+<div class="mb-6 rounded-2xl overflow-hidden border border-outline-variant/50">
+<img alt="A creator editing a video project on a laptop in a clean modern workspace." class="w-full h-auto object-contain" src="images/ugc.png"/>
+</div>
+<h2 class="font-headline-lg text-headline-lg mb-4">UGC &amp; Content Creation</h2>
+<p class="text-on-surface-variant font-body-md mb-8">Become a high-impact creator specializing in short-form video, storytelling, and professional editing.</p>
+<div class="flex items-end justify-between gap-4 mb-8">
+<div>
+<p class="text-label-md uppercase tracking-widest text-primary-container mb-1">Price</p>
+<p class="text-headline-lg text-primary font-bold">50,000 RWF</p>
+</div>
+<button class="px-6 py-3 rounded-full bg-primary-container text-on-primary-container font-headline-md font-bold active:scale-95 transition-all" data-payment-trigger="ugc" type="button">
+Apply Now
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div aria-hidden="true" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 px-4" id="payment-modal">
+<div class="w-full max-w-2xl rounded-2xl bg-surface-container-high border border-primary-container/20 shadow-2xl">
+<div class="flex items-start justify-between gap-4 border-b border-outline-variant/30 p-6">
+<div>
+<p class="text-label-md uppercase tracking-widest text-primary-container">Program Investment</p>
+<h3 class="font-headline-lg text-headline-lg mt-4">50,000 RWF</h3>
+</div>
+<button aria-label="Close payment details" class="text-on-surface-variant hover:text-primary text-3xl leading-none" id="payment-modal-close" type="button"></button>
+</div>
+<div class="p-6 space-y-3 text-on-surface-variant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container">calendar_today</span>
+<span class="font-body-md text-body-md">8 Weeks Intensive Program</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container">sensors</span>
+<span class="font-body-md text-body-md">Weekly live sessions</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container">location_on</span>
+<span class="font-body-md text-body-md">Monthly Kigali Networking Meetups</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container">groups</span>
+<span class="font-body-md text-body-md">Lifetime community access</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container">workspace_premium</span>
+<span class="font-body-md text-body-md">Creative Saako Certification</span>
+</div>
+<div class="pt-4 flex flex-col sm:flex-row gap-4">
+<a class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary-container text-on-primary-container font-headline-md font-bold active:scale-95 transition-all" href="#community">Proceed to Payment</a>
+<button class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-outline-variant text-on-surface font-headline-md font-bold hover:bg-surface-container transition-colors" id="payment-modal-cancel" type="button">Cancel</button>
+</div>
+</div>
+</div>
+</div>
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-stack-lg">
+<div class="max-w-3xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Who Should Apply?</h2>
+<div class="space-y-5">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<p class="font-body-lg text-body-lg font-bold">Aspiring Digital Creatives</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Young Rwandans looking to transition into Design, Marketing, or Tech.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<p class="font-body-lg text-body-lg font-bold">Independent Professionals</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Freelancers who want to scale their business and charge premium rates.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<p class="font-body-lg text-body-lg font-bold">Community-Minded Builders</p>
+<p class="font-body-md text-body-md text-on-surface-variant">People who believe in the power of collective growth and Kigali's creative potential.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<p class="font-body-lg text-body-lg font-bold">Committed Learners</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Individuals ready to dedicate 15+ hours weekly for 8 weeks of intensive growth.</p>
+</div>
+</div>
+</div>
+</div>
+</section></main></section><section class="one-page-section" id="community"><main class="relative">
+<!-- Hero Section -->
+<section class="pt-32 pb-20 px-margin-desktop max-w-container-max mx-auto text-center relative overflow-hidden">
+<h1 class="font-display-lg text-display-lg md:text-display-lg mb-stack-md max-w-4xl mx-auto">
+                Start building your independent digital career.
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-stack-lg">
+                Join Kigali's elite circle of digital creators, designers, and entrepreneurs. Master high-income skills through intensive, community-driven learning.
+            </p>
+</section>
+<!-- Waitlist Form Section -->
+<section class="relative px-margin-desktop max-w-container-max mx-auto mb-stack-lg">
+<div class="bg-surface-container p-8 md:p-16 rounded-xl border border-outline-variant/30 text-center relative overflow-hidden">
+<div class="absolute -bottom-12 -left-12 w-48 h-48 bg-primary-container/5 rounded-full blur-3xl"></div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Join the Community Waitlist</h2>
+<p class="text-on-surface-variant font-body-md mb-8">
+                        Our community capacity is limited to maintain high-quality interactions. Sign up for the waitlist to be notified when the next application window opens for both graduates and direct pro applicants.
+                    </p>
+<form class="flex flex-col md:flex-row gap-4 w-full max-w-2xl mx-auto" onsubmit="event.preventDefault(); alert('Joined Waitlist!');">
+<div class="flex-grow">
+<input class="w-full min-w-0 bg-surface-container-low border border-outline-variant rounded-full px-6 py-3 text-on-surface placeholder:text-on-surface-variant/50 focus:ring-1 focus:ring-primary-container focus:border-primary-container outline-none transition-all" placeholder="Enter your email" required="" type="email"/>
+</div>
+<button class="px-8 py-4 bg-primary-container text-on-primary-container rounded-full font-headline-md font-bold hover:shadow-lg transition-all active:scale-95 whitespace-nowrap" type="submit">
+                            Join Community Waitlist
+                        </button>
+</form>
+<p class="mt-6 text-label-md text-on-surface-variant/60">
+                        Your privacy is sacred. We only send relevant updates.
+                    </p>
+</div>
+</div>
+</section>
+</main></section><section class="one-page-section" id="about"><main>
+<!-- Hero Section -->
+<section class="relative px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container-max mx-auto overflow-hidden">
+<div class="absolute top-0 right-0 -z-10 opacity-20 pointer-events-none">
+</div>
+<div class="max-w-3xl">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-8 leading-[1.1]">
+                    Why Creative <span class="text-primary-container">Saako</span> exists.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl">
+                    We aren't just building a course platform. We are building the infrastructure for the next generation of African digital giants. Creative Saako exists to bridge the gap between raw ambition and global standards.
+                </p>
+<div class="creative-saako-video mx-auto max-w-4xl">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/WU9dIAQRNeo?rel=0&amp;modestbranding=1&amp;playsinline=1" title="Why Creative Saako Exists">
+</iframe>
+</div>
+</div>
+</section>
+<!-- About Story Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-lg" id="vision">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 relative">
+<div class="aspect-[4/5] rounded-lg overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional and soulful portrait of a young African tech founder named Isaac. He is dressed in a minimalist cream-colored knit sweater, standing in a modern, dark-toned studio with warm golden accent lighting. The photography style is high-end editorial, with a shallow depth of field and a focus on his thoughtful and determined expression. The background is slightly blurred with subtle hints of tech equipment and greenery, embodying a balance of professional excellence and human warmth." src="images/founder.jpeg"/>
+</div>
+</div>
+<div class="md:col-span-7 md:pl-12">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Meet Isaac</h2>
+<div class="space-y-6 text-on-surface-variant font-body-lg text-body-lg">
+<p>
+                            When I was starting out my digital career, I was that person, spending hours online, going through programs, trying to find the right skills to open doors as a young African. The content was out there. But most of it was built for someone else. The creators were speaking to a different reality, and it was hard to connect with what they were saying.
+                        </p>
+<p>
+                            And the few local options? Most of them were just business. No real community. No ongoing support. Just a course, sometimes outdated, and then nothing. The path felt lonely. So I'm building what I wished I had starting out.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Personal Message -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-lg">
+<div class="max-w-4xl mx-auto text-center">
+<span class="material-symbols-outlined text-6xl mb-6 text-primary-container">format_quote</span>
+<p class="font-display-lg-mobile md:font-headline-lg text-display-lg-mobile md:text-headline-lg italic font-medium leading-tight mb-8">
+                    At Creative Saako, every coach is someone actively doing the work right now, not someone who studied it years ago and forgot what starting out feels like.
+                </p>
+<div class="flex items-center justify-center gap-4">
+<div class="w-12 h-12 rounded-full border-2 border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close-up headshot of Isaac, the founder of Creative Saako, smiling warmly at the camera. The lighting is soft and natural, emphasizing a approachable yet authoritative presence. He is in a modern office setting with blurred warm wooden textures and digital screens in the background. The image should convey trust, mentorship, and high-level professionalism in a dark-mode friendly palette." src="images/profil.jpeg"/>
+</div>
+<div class="text-left">
+<p class="font-bold">Isaac N.</p>
+<p class="text-sm opacity-80">Creative Saako</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="relative bg-[#16130c] px-margin-mobile md:px-margin-desktop py-stack-lg overflow-hidden">
+<div class="max-w-3xl mx-auto text-center py-stack-lg">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-stack-md">Ready to begin your freelancing journey?</h2>
+<p class="text-on-surface-variant mb-stack-lg font-body-lg text-body-lg">
+                    Join a community of ambitious creators in Kigali building global careers. Limited seats for Cohort 2 starting next month.
+                </p>
+<button class="bg-primary-container text-on-primary-fixed px-12 py-5 rounded-full font-bold text-headline-md active:scale-95 transition-all">
+                    Apply to Cohort 2
+                </button>
+<p class="mt-6 text-sm text-outline">Application deadline: 15th of next month.</p>
+</div>
+</section>
+</main></section><footer class="site-footer">
+<div class="footer-inner">
+<div>
+<div class="footer-brand">Creative Saako</div>
+<p class="footer-description">
+          A home for the next generation of African digital entrepreneurs.
+          Skills, community, and support to help you build a career and live
+          life on your own terms.
+        </p>
+</div>
+<div class="footer-column">
+<h3>Explore</h3>
+<a href="index.html#what-we-build">Why Creative Saako</a>
+<a href="#program">Program</a>
+<a href="#about">About</a>
+<a href="#tracks">Tracks</a>
+</div>
+<div class="footer-column">
+<h3>Start</h3>
+<a href="#community">Apply to Cohort 2</a>
+<a href="#community">Pay Tuition</a>
+<a href="mailto:hello@creativesaako.com">
+          hello@creativesaako.com
+        </a>
+</div>
+</div>
+</footer><script>
+        // Micro-interactions and effects
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.createElement('div');
+            glow.className = 'fixed pointer-events-none w-64 h-64 bg-primary-container/5 rounded-full blur-3xl -z-50';
+            glow.style.left = e.clientX - 128 + 'px';
+            glow.style.top = e.clientY - 128 + 'px';
+            
+            // Limit the number of glow elements
+            const existingGlows = document.querySelectorAll('.fixed.pointer-events-none');
+            if (existingGlows.length > 1) {
+                existingGlows[0].remove();
+            }
+            document.body.appendChild(glow);
+        });
+    </script><script>
+        // Micro-interaction for track cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Payment details modal
+        const paymentModal = document.getElementById('payment-modal');
+        const closePaymentModal = () => {
+            paymentModal.classList.add('hidden');
+            paymentModal.classList.remove('flex');
+            paymentModal.setAttribute('aria-hidden', 'true');
+        };
+
+        const openPaymentModal = () => {
+            paymentModal.classList.remove('hidden');
+            paymentModal.classList.add('flex');
+            paymentModal.setAttribute('aria-hidden', 'false');
+        };
+
+        document.querySelectorAll('[data-payment-trigger]').forEach((button) => {
+            button.addEventListener('click', openPaymentModal);
+        });
+
+        document.getElementById('payment-modal-close').addEventListener('click', closePaymentModal);
+        document.getElementById('payment-modal-cancel').addEventListener('click', closePaymentModal);
+        paymentModal.addEventListener('click', (event) => {
+            if (event.target === paymentModal) {
+                closePaymentModal();
+            }
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closePaymentModal();
+            }
+        });
+    </script><script>
+        // Simple micro-interaction for buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => {
+                btn.style.transform = 'scale(0.96)';
+            });
+            btn.addEventListener('mouseup', () => {
+                btn.style.transform = 'scale(1)';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'scale(1)';
+            });
+        });
+    </script><script>(function(){const t=document.getElementById("one-page-menu-toggle"),m=document.getElementById("one-page-mobile-menu"),links=document.querySelectorAll('.one-page-nav a[href^="#"]'),secs=document.querySelectorAll('.one-page-section'),cta=document.querySelector('.one-page-nav a[href="#community"][style]');if(t&&m){t.addEventListener('click',()=>{const o=m.classList.toggle('is-open');t.setAttribute('aria-expanded',String(o))});m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{m.classList.remove('is-open');t.setAttribute('aria-expanded','false')}))}const ob=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;links.forEach(l=>{if(l===cta)return;const a=l.getAttribute('href')==='#'+e.target.id;l.classList.toggle('text-primary',a);l.classList.toggle('font-bold',a);l.classList.toggle('border-b-2',a);l.classList.toggle('border-primary-container',a);l.classList.toggle('pb-1',a);l.classList.toggle('text-on-surface-variant',!a)})}),{rootMargin:'-30% 0px -60% 0px',threshold:0});secs.forEach(s=>ob.observe(s))})();</script></body></html>
